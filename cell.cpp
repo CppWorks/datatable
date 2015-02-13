@@ -38,12 +38,20 @@ void Cell::operator=(const float value)
 {
 	operator=(lexical_cast<wstring>(value));
 }
+void Cell::operator=(const string& value)
+{
+	std::wstring ws;
+	ws.assign(value.begin(), value.end());
+
+	operator=(ws);
+}
 void Cell::operator=(const wstring& value)
 {
 	Assign(value);
 
 	row->InformUpdate(0, order);
 }
+
 
 const wchar_t* Cell::c_str()
 {

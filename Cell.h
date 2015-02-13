@@ -19,6 +19,7 @@ protected:
 public:
 	void operator=(const int value);
 	void operator=(const float value);
+	void operator=(const string& value);
 	void operator=(const wstring& value);
 
 	bool operator==(const Cell& rhs);
